@@ -76,7 +76,6 @@ export default function MovieCard({ movie, action, showPopularity = false }) {
             </Typography>
           </Grid>
         </Grid>
-        // Conditional render: Popularity is only added on and displayed if showPopularity is true
         {showPopularity &&(
           <Typography varient="body1" sx={{ marginTop: 1}}>
             Popularity: {movie.popularity.toFixed(1)}
