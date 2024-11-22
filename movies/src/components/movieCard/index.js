@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import React, { useContext  } from "react";
 import { MoviesContext } from "../../contexts/moviesContext";
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 
 // showPopularity set to 'false' by default to not be visible on other pages
 export default function MovieCard({ movie, action, showPopularity = false }) { 
@@ -90,6 +91,12 @@ export default function MovieCard({ movie, action, showPopularity = false }) {
           <Button variant="outlined" size="medium" color="primary">
             More Info ...
           </Button>
+        </Link>
+
+        <Link to={`/movie/${movie.id}/recommendations`} style={{ textDecoration: "none"}}>
+          <ManageSearchIcon sx={{ cursor: "pointer", color: "green", fontSize: 30, marginLeft: 1}}
+          titleAccess="View Recommendations"
+          />
         </Link>
         
       </CardActions>
