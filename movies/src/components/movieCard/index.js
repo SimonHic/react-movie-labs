@@ -16,7 +16,8 @@ import Avatar from '@mui/material/Avatar';
 import React, { useContext  } from "react";
 import { MoviesContext } from "../../contexts/moviesContext";
 
-export default function MovieCard({ movie, action }) { 
+// showPopularity set to 'false' by default to not be visible on other pages
+export default function MovieCard({ movie, action, showPopularity = false }) { 
   const { favorites } = useContext(MoviesContext);
   const { watchlist } = useContext(MoviesContext);
 
@@ -75,6 +76,12 @@ export default function MovieCard({ movie, action }) {
             </Typography>
           </Grid>
         </Grid>
+        // Conditional render: Popularity is only added on and displayed if showPopularity is true
+        {showPopularity &&(
+          <Typography varient="body1" sx={{ marginTop: 1}}>
+            Popularity: {movie.popularity.toFixed(1)}
+          </Typography>
+        )}
       </CardContent>
       <CardActions disableSpacing>
       

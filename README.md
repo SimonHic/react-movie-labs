@@ -44,3 +44,8 @@ e.g.
 Itemize the technologies/techniques you researched independently and adopted in your project, 
 i.e. aspects not covered in the lectures/labs. Include the source code filenames that illustrate these 
 (we do not require code excerpts) and provide references to the online resources that helped you (articles/blogs).
+
+## References
+
+https://stackoverflow.com/questions/979256/sorting-an-array-of-objects-by-property-values#answer-979289
+https://www.javascripttutorial.net/javascript-array-sort/
