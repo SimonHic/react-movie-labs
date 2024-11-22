@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
+import WatchlistIcon from "@mui/icons-material/Visibility"
 import Grid from "@mui/material/Grid2";
 import img from '../../images/film-poster-placeholder.png'
 import { Link } from "react-router-dom";
@@ -17,11 +18,18 @@ import { MoviesContext } from "../../contexts/moviesContext";
 
 export default function MovieCard({ movie, action }) { 
   const { favorites, addToFavorites } = useContext(MoviesContext);
+  const { watchlist, addToWatchlist } = useContext(MoviesContext);
 
   if (favorites.find((id) => id === movie.id)) {
     movie.favorite = true;
   } else {
     movie.favorite = false
+  }
+
+  if (watchlist.find((id) => id === movie.id)) {
+    movie.watchlist = true;
+  } else {
+    movie.watchlist = false
   }
 
   const handleAddToFavorite = (e) => {
@@ -37,7 +45,11 @@ export default function MovieCard({ movie, action }) {
             <Avatar sx={{ backgroundColor: 'red' }}>
               <FavoriteIcon />
             </Avatar>
-          ) : null
+          ) : movie.watchlist ? (
+            <Avatar sx={{ backkgroundColor: 'blue' }}>
+              <WatchlistIcon />
+            </Avatar> 
+        ) : null
         }
         title={
           <Typography variant="h5" component="p">
