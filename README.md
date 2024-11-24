@@ -2,6 +2,7 @@
 
 Name: Simon Hickey
 
+Video Demo: https://www.youtube.com/watch?v=Ie-xmCktabY
 ## Overview.
 
 This assignment extends the React Movies Lab work by integrating new TMDB API features such as popular movies, recommendations, and credits. It adds watchlist functionality, filtering, sorting, and a responsive UI using MUI and React Query.
