@@ -84,7 +84,11 @@ npm start
 ## References
 
 https://stackoverflow.com/questions/979256/sorting-an-array-of-objects-by-property-values#answer-979289
+
 https://www.javascripttutorial.net/javascript-array-sort/
+
 https://stackoverflow.com/questions/52596070/materialui-custom-hover-style#answer-52597084
+
 https://mui.com/material-ui/react-accordion/
+
 https://developer.themoviedb.org/reference/intro/getting-started
