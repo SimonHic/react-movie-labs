@@ -8,7 +8,11 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
-import MovieReviews from "../movieReviews"
+import MovieReviews from "../movieReviews";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const root = {
     display: "flex",
@@ -25,14 +29,23 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
 
   return (
     <>
-      <Typography variant="h5" component="h3">
+      <Typography fontWeight="bold" variant="h5" component="h3">
         Overview
       </Typography>
 
-      <Typography variant="h6" component="p">
+      <Typography sx={{marginBottom: 5}}variant="h6" component="p">
         {movie.overview}
       </Typography>
 
+      <Accordion sx={{marginBottom: 5}}>
+        <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="genres-content"
+        id="genres-header"
+      >
+          <Typography fontWeight= "bold">Genres</Typography>
+        </AccordionSummary>
+      <AccordionDetails> 
       <Paper 
         component="ul" 
         sx={{...root}}
@@ -46,6 +59,18 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           </li>
         ))}
       </Paper>
+      </AccordionDetails>
+      </Accordion>
+
+      <Accordion sx={{marginBottom: 5}}>
+        <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="details-content"
+        id="details-header"
+        >
+          <Typography fontWeight= "bold">Details</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
       <Paper component="ul" sx={{...root}}>
         <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
         <Chip
@@ -67,6 +92,9 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           </li>
         ))}
       </Paper>
+      </AccordionDetails>
+      </Accordion>
+
       <Fab
         color="secondary"
         variant="extended"

@@ -92,6 +92,10 @@ const SiteHeader = ({ history }) => {
                     key={opt.label}
                     color="inherit"
                     onClick={() => handleMenuSelect(opt.path)}
+                    sx={{ "&:hover": {
+                      backgroundColor: theme.palette.secondary.light,
+                      color: theme.palette.primary.main
+                    }}}
                   >
                     {opt.label}
                   </Button>

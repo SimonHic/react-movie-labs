@@ -49,3 +49,4 @@ i.e. aspects not covered in the lectures/labs. Include the source code filenames
 
 https://stackoverflow.com/questions/979256/sorting-an-array-of-objects-by-property-values#answer-979289
 https://www.javascripttutorial.net/javascript-array-sort/
+https://stackoverflow.com/questions/52596070/materialui-custom-hover-style#answer-52597084
